@@ -1,5 +1,6 @@
 # How to set up and use an Yubikey with OpenPGP
 In this tutorial i will discuss how to set up an Yubikey with generated keys, how to manage the keys and how the Yubikey then can be used for encryption of emails and as login device for SSH.
+I want to thank Thomas Goirand for his great Presentation at DebConf. I took almost everething i write below from his presentation that can be viewed over on Youtube: https://www.youtube.com/watch?v=xGsixSh6sC4
 
 ## Generate an Master key
 In this section it is really important to use an clean and secure as possible machine. Preferably an Offline PC with an Life-CD.
