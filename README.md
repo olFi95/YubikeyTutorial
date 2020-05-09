@@ -30,6 +30,17 @@ sub   rsa4096 2020-04-20 [E]
 For convenience later i export my Master-Key-Id to an variable like: `export keyid=C8AAC3DB7F2C8F8E9B5A9790353A6519F974167F`
 
 
+## Delete the Default Encryption Key
+Because we do not want an Key of any type but the master key to have an infinite Lifetime, we should delete it. To do so, we use `gpg --edit-key $(echo $keyid)`. Then we select the Key with `key 1`. The Key in question should now have an asterics next to it like this:
+```
+sec  rsa4096/353A6519F974167F
+     erzeugt: 2020-04-20  verfällt: niemals     Nutzung: SC  
+     Vertrauen: ultimativ     Gültigkeit: ultimativ
+ssb* rsa4096/EDAA3FBE9049B3B1
+     erzeugt: 2020-04-20  verfällt: niemals     Nutzung: E   
+```
+If the correct key (the one with the `Nutzung: E`) is selected we can delete it with `delkey` followed by `y`.
+
 ## Generate subkeys
 After we generated the Master-Key we need to generate several subkeys from it.
 
